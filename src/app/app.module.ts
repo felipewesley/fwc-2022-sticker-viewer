@@ -1,17 +1,25 @@
 import { NgModule } from '@angular/core';
+import { RouterModule } from '@angular/router';
 import { BrowserModule } from '@angular/platform-browser';
-
-import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
+import { mainRouting } from './modules/main/main.routing';
+
+import { AppComponent } from './app.component';
+
 import { CoreModule } from './core/core.module';
+import { SharedModule } from './shared';
 
 @NgModule({
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
 
-    CoreModule
+    RouterModule.forRoot(mainRouting),
+
+    CoreModule,
+
+    SharedModule
   ],
   declarations: [
     AppComponent
