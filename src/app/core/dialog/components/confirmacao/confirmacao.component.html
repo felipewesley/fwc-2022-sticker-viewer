@@ -1,0 +1,18 @@
+<h1 mat-dialog-title>Confirmação</h1>
+<div mat-dialog-content>
+    {{ mensagem }}
+</div>
+<div mat-dialog-actions class="flex items-center justify-end gap-1">
+    <button
+        *ngIf="cancelarAction?.show"
+        mat-button
+        (click)="onCancelar()">
+        {{ cancelarAction?.label }}
+    </button>
+    <button
+        mat-raised-button
+        [color]="'accent'"
+        (click)="onConfirmar()">
+        {{ confirmarAction?.label }}
+    </button>
+</div>
