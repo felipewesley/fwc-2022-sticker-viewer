@@ -8,7 +8,7 @@ import { mainRouting } from './modules/main/main.routing';
 import { AppComponent } from './app.component';
 
 import { CoreModule } from './core/core.module';
-import { SharedModule } from './shared';
+import { LayoutModule } from './layout/layout.module';
 
 @NgModule({
   imports: [
@@ -19,7 +19,7 @@ import { SharedModule } from './shared';
 
     CoreModule,
 
-    SharedModule
+    LayoutModule
   ],
   declarations: [
     AppComponent
