@@ -5,6 +5,8 @@ import { SharedModule } from "app/shared";
 
 import { mainRouting as routes } from "./main.routing";
 
+import { MainDetalheResolver } from "./resolvers/detalhe.resolver";
+
 import { MainComponent } from "./main.component";
 
 @NgModule({
@@ -15,6 +17,7 @@ import { MainComponent } from "./main.component";
     declarations: [
         MainComponent
     ],
-    exports: []
+    exports: [],
+    providers: [MainDetalheResolver]
 })
 export class MainModule { }
