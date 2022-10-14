@@ -6,7 +6,15 @@ export const mainRouting: Routes = [
 
     {
         path: '',
-        component: MainComponent
+        component: MainComponent,
+        children: [
+
+            {
+                path: ':resourceType',
+                loadChildren: () => import('./detalhe/detalhe.module').then(m => m.MainDetalheModule)
+            }
+
+        ]
     }
 
-]
+];
