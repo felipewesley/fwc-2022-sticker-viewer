@@ -3,23 +3,23 @@ import { RouterModule } from '@angular/router';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-import { mainRouting } from './modules/main/main.routing';
+import { appRouting } from './app.routing';
 
 import { AppComponent } from './app.component';
 
 import { CoreModule } from './core/core.module';
-import { LayoutModule } from './layout/layout.module';
+import { LayoutComponent } from './layout/layout.component';
 
 @NgModule({
   imports: [
+    RouterModule.forRoot([...appRouting]),
+
     BrowserModule,
     BrowserAnimationsModule,
 
-    RouterModule.forRoot(mainRouting),
-
+    LayoutComponent,
+    
     CoreModule,
-
-    LayoutModule
   ],
   declarations: [
     AppComponent
