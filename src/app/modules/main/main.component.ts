@@ -1,5 +1,6 @@
-import { Component, OnInit } from "@angular/core";
-import { FormControl } from "@angular/forms";
+import { Component, OnInit, ViewChild } from "@angular/core";
+import { FormControl, FormGroup } from "@angular/forms";
+import { MatDrawer } from "@angular/material/sidenav";
 
 import { TipoBuscaEnum } from "app/dominio/enums/tipo-busca.enum";
 
@@ -13,8 +14,14 @@ import { MainService } from "./services/main.service";
 })
 export class MainComponent implements OnInit {
 
-    public tipoBusca = new FormControl<TipoBuscaEnum>(null);
-    public buscaValor = new FormControl('');
+    public busca = new FormGroup({
+
+        tipo: new FormControl<TipoBuscaEnum>(null),
+        valor: new FormControl('')
+
+    });
+
+    @ViewChild('drawer', { static: true }) public drawer: MatDrawer;
 
     constructor() { }
 
@@ -23,8 +30,6 @@ export class MainComponent implements OnInit {
     }
 
     buscar(): void {
-
-        const tipo = this.tipoBusca.value;
-        const valor = this.buscaValor.value;
+        
     }
 }

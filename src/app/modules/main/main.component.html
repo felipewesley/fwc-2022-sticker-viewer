@@ -1,10 +1,15 @@
-<div class="container">
+<mat-drawer-container class="drawer-container">
 
-    <mat-form-field appearance="fill">
-        <mat-label>Choose an option</mat-label>
-        <mat-select>
-            <mat-option value="option1">Option 1</mat-option>
-        </mat-select>
-    </mat-form-field>
+    <!-- Drawer -->
+    <mat-drawer #drawer class="example-sidenav" mode="side" position="end">
+        <p>Auto-resizing sidenav</p>
+    </mat-drawer>
 
-</div>
+    <!-- Content -->
+    <mat-drawer-content class="container">
+        <button type="button" mat-button (click)="drawer.toggle()">
+            Toggle sidenav
+        </button>
+    </mat-drawer-content>
+
+</mat-drawer-container>
