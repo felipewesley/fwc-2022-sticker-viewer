@@ -18,6 +18,10 @@ export const appRouting: Routes = [
             {
                 path: 'home',
                 loadChildren: () => import('./modules/home/home.module').then(m => m.HomeModule)
+            },
+            {
+                path: 'search',
+                loadChildren: () => import('./modules/pesquisa/pesquisa.module').then(m => m.PesquisaModule)
             }
 
         ]
