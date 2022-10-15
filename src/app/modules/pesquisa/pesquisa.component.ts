@@ -13,6 +13,6 @@ export class PesquisaComponent implements OnInit {
 
     ngOnInit(): void {
         
-        setTimeout(() => this.loading = false, 5000);
+        // setTimeout(() => this.loading = false, 5000);
     }
 }

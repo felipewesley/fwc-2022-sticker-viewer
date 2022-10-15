@@ -7,7 +7,14 @@ export const pesquisaRoutes: Routes = [
     {
         path: '',
         component: PesquisaComponent,
-        children: []
+        children: [
+
+            {
+                path: 'stadium',
+                loadChildren: () => import('./estadio/estadio.module').then(m => m.EstadioModule)
+            }
+
+        ]
     }
 
 ]
