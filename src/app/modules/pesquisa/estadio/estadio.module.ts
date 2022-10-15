@@ -4,6 +4,7 @@ import { RouterModule } from "@angular/router";
 import { SharedModule } from "app/shared";
 
 import { estadioRouting as routes } from "./estadio.routing";
+import { EstadioDetalheResolver } from "./detalhe/resolvers/detalhe.resolver";
 
 import { EstadioComponent } from "./estadio.component";
 import { EstadioStartComponent } from "./start/start.component";
@@ -20,6 +21,9 @@ import { EstadioDetalheComponent } from "./detalhe/detalhe.component";
         EstadioStartComponent,
         EstadioDetalheComponent
     ],
-    exports: []
+    exports: [],
+    providers: [
+        EstadioDetalheResolver
+    ]
 })
 export class EstadioModule { }
