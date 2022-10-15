@@ -3,7 +3,7 @@ import { Component, OnInit } from "@angular/core";
 @Component({
     selector: 'app-estadio',
     templateUrl: './estadio.component.html',
-    styleUrls: []
+    styleUrls: ['./estadio.component.scss']
 })
 export class EstadioComponent implements OnInit {
 
