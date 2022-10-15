@@ -7,9 +7,12 @@ import { Component, OnInit } from "@angular/core";
 })
 export class PesquisaComponent implements OnInit {
 
+    public loading = true;
+
     constructor() { }
 
     ngOnInit(): void {
         
+        setTimeout(() => this.loading = false, 5000);
     }
 }

@@ -19,30 +19,36 @@
     <!-- Content -->
     <mat-drawer-content class="drawer-content">
         
-        <div>
-            <br><br><br><br><br>
-            <br><br><br><br><br>
-            <br><br><br><br><br>
-            <br><br><br><br><br>
-            <br><br><br><br><br>
-            <br><br><br><br><br>
-            <br><br><br><br><br>
-            <br><br><br><br><br>
-        </div>
+        <loading *ngIf="loading"></loading>
 
-        <button type="button" mat-button (click)="drawer.toggle()">
-            Toggle sidenav
-        </button>
+        <div class="container">
 
-        <div>
-            <br><br><br><br><br>
-            <br><br><br><br><br>
-            <br><br><br><br><br>
-            <br><br><br><br><br>
-            <br><br><br><br><br>
-            <br><br><br><br><br>
-            <br><br><br><br><br>
-            <br><br><br><br><br>
+            <!-- <div>
+                <br><br><br><br><br>
+                <br><br><br><br><br>
+                <br><br><br><br><br>
+                <br><br><br><br><br>
+                <br><br><br><br><br>
+                <br><br><br><br><br>
+                <br><br><br><br><br>
+                <br><br><br><br><br>
+            </div> -->
+    
+            <button type="button" mat-button (click)="drawer.toggle()">
+                Toggle sidenav
+            </button>
+    
+            <div>
+                <br><br><br><br><br>
+                <br><br><br><br><br>
+                <br><br><br><br><br>
+                <br><br><br><br><br>
+                <br><br><br><br><br>
+                <br><br><br><br><br>
+                <br><br><br><br><br>
+                <br><br><br><br><br>
+            </div>
+
         </div>
 
     </mat-drawer-content>
