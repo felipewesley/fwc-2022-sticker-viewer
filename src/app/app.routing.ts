@@ -4,11 +4,11 @@ import { LayoutComponent } from "./layout/layout.component";
 
 export const appRouting: Routes = [
 
-    // {
-    //     path: '',
-    //     pathMatch: 'full',
-    //     redirectTo: 'home'
-    // },
+    {
+        path: '',
+        pathMatch: 'full',
+        redirectTo: 'home'
+    },
 
     {
         path: '',
@@ -16,8 +16,8 @@ export const appRouting: Routes = [
         children: [
 
             {
-                path: '',
-                loadChildren: () => import('./modules/main/main.module').then(m => m.MainModule)
+                path: 'home',
+                loadChildren: () => import('./modules/home/home.module').then(m => m.HomeModule)
             }
 
         ]
