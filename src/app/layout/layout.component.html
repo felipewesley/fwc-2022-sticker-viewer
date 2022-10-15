@@ -1,10 +1,14 @@
-<!-- Toolbar -->
-<mat-toolbar [color]="'primary'">
-    <span>Sticker Viewer</span>
-</mat-toolbar>
+<div class="container" role="main">
 
-<div class="content" role="main">
+    <!-- Toolbar -->
+    <div class="toolbar">
+        <mat-toolbar [color]="'primary'">
+            <span>Sticker Viewer</span>
+        </mat-toolbar>
+    </div>
     
-    <router-outlet></router-outlet>
+    <div class="content">
+        <router-outlet></router-outlet>
+    </div>
 
 </div>
