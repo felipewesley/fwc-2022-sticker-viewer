@@ -1,0 +1,1 @@
+export type TipoPesquisa = 'jogador' | 'pais' | 'estadio';
