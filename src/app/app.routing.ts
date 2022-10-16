@@ -20,7 +20,7 @@ export const appRouting: Routes = [
                 loadChildren: () => import('./modules/home/home.module').then(m => m.HomeModule)
             },
             {
-                path: 'search',
+                path: 'pesquisa',
                 loadChildren: () => import('./modules/pesquisa/pesquisa.module').then(m => m.PesquisaModule)
             }
 
