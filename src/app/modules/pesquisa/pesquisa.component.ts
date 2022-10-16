@@ -4,9 +4,10 @@ import { MatDrawer } from "@angular/material/sidenav";
 
 import { NotificacaoService } from "app/core/notificacao";
 
+import { TipoPesquisa } from "app/dominio/types/search.type";
+
 import { PesquisaService } from "./services/pesquisa.service";
 import { PesquisaFormService } from "./services/pesquisa.form.service";
-import { TipoPesquisa } from "app/dominio/types/search.type";
 
 @Component({
     selector: 'app-pesquisa',
@@ -16,7 +17,7 @@ import { TipoPesquisa } from "app/dominio/types/search.type";
 })
 export class PesquisaComponent implements OnInit {
 
-    public loading = true;
+    public loading = false;
 
     @ViewChild('drawer', { static: true }) private _drawer: MatDrawer;
 

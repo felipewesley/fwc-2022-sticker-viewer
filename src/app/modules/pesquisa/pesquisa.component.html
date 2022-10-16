@@ -5,7 +5,7 @@
         #drawer
         class="drawer-sidebar"
         [mode]="'side'"
-        [opened]="true"
+        [opened]="false"
         [position]="'end'">
 
         <p>Auto-resizing sidenav</p>
@@ -21,32 +21,29 @@
         
         <loading *ngIf="loading"></loading>
 
-        <div class="container">
+        <header class="p-24">
+            
+            <custom-icon
+                [icon]="'search'"
+                [color]="'primary'"></custom-icon>
 
-            <!-- <div>
-                <br><br><br><br><br>
-                <br><br><br><br><br>
-                <br><br><br><br><br>
-                <br><br><br><br><br>
-                <br><br><br><br><br>
-                <br><br><br><br><br>
-                <br><br><br><br><br>
-                <br><br><br><br><br>
-            </div> -->
-    
-            <button type="button" mat-button (click)="drawer.toggle()">
-                Toggle sidenav
-            </button>
+            <div class="content">
+                <h2>Pesquisa</h2>
+                <span>
+                    Pesquise por recursos disponibilizados no álbum para obter detalhes
+                </span>
+            </div>
+
+        </header>
+
+        <mat-divider></mat-divider>
+
+        <div class="container p-24">
     
             <div>
-                <br><br><br><br><br>
-                <br><br><br><br><br>
-                <br><br><br><br><br>
-                <br><br><br><br><br>
-                <br><br><br><br><br>
-                <br><br><br><br><br>
-                <br><br><br><br><br>
-                <br><br><br><br><br>
+                <button type="button" mat-button (click)="drawer.toggle()">
+                    Toggle sidenav
+                </button>
             </div>
 
         </div>
