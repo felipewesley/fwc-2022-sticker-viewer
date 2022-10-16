@@ -1,0 +1,16 @@
+<div class="option" [ngClass]="{'selected': active}" matRipple (click)="onClicked.emit()">
+    
+    <mat-icon
+        *ngIf="active"
+        class="selected-icon"
+        [color]="'primary'">check_circle</mat-icon>
+
+    <custom-icon
+        class="search-for-icon"
+        [icon]="icon"
+        [color]="'primary'"></custom-icon>
+
+    <p class="search-for-label">Pesquise por</p>
+    <p class="option-title">{{ title }}</p>
+
+</div>
