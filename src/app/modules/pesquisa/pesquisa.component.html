@@ -8,6 +8,8 @@
         [opened]="false"
         [position]="'end'">
 
+        <loading *ngIf="true"></loading>
+
         <p>Auto-resizing sidenav</p>
         <!-- <router-outlet></router-outlet> -->
         <button mat-raised-button (click)="drawer.close()">
@@ -21,6 +23,7 @@
         
         <loading *ngIf="loading"></loading>
 
+        <!-- Header -->
         <header class="p-24">
             
             <custom-icon
@@ -36,17 +39,45 @@
 
         </header>
 
+        <!-- Divider -->
         <mat-divider></mat-divider>
 
-        <div class="container p-24">
+        <!-- Content -->
+        <section class="p-24">
     
-            <div>
-                <button type="button" mat-button (click)="drawer.toggle()">
-                    Toggle sidenav
-                </button>
+            <div class="content">
+
+                <div class="options-grid">
+                    
+                    <!-- Players -->
+                    <app-opcao-pesquisa
+                        class="item"
+                        [active]="false"
+                        [title]="'Jogadores'"
+                        [icon]="'person'"
+                        (onClicked)="pesquisar('jogador')"></app-opcao-pesquisa>
+
+                    <!-- Stadiums -->
+                    <app-opcao-pesquisa
+                        class="item"
+                        [active]="false"
+                        [title]="'Estádios'"
+                        [icon]="'stadium'"
+                        (onClicked)="pesquisar('estadio')"></app-opcao-pesquisa>
+
+                    <!-- Countries -->
+                    <app-opcao-pesquisa
+                        class="item"
+                        [active]="false"
+                        [title]="'Países'"
+                        [icon]="'flag'"
+                        (onClicked)="pesquisar('pais')"></app-opcao-pesquisa>
+    
+                </div>
+
             </div>
 
-        </div>
+        </section>
 
     </mat-drawer-content>
 

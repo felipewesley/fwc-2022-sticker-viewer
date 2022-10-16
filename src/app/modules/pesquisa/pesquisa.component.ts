@@ -33,6 +33,10 @@ export class PesquisaComponent implements OnInit {
 
     public pesquisar(destino: TipoPesquisa): void {
 
+        console.log(destino);
+
+        return;
+
         const target: TipoPesquisa[] = [];
 
         switch (destino) {

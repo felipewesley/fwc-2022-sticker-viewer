@@ -8,17 +8,19 @@ import { CustomIconComponent } from "app/shared/components/custom-icon/custom-ic
 import { pesquisaRoutes as routes } from "./pesquisa.routing";
 
 import { PesquisaComponent } from "./pesquisa.component";
+import { OpcaoPesquisaComponent } from "./components/opcao-pesquisa/opcao-pesquisa.component";
 
 @NgModule({
     imports: [
         SharedModule,
         LoadingComponent,
         CustomIconComponent,
-
+        
         RouterModule.forChild(routes)
     ],
     declarations: [
-        PesquisaComponent
+        PesquisaComponent,
+        OpcaoPesquisaComponent
     ],
     exports: [],
     providers: []
