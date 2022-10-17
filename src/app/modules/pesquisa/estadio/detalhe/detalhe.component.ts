@@ -1,4 +1,7 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnDestroy, OnInit } from "@angular/core";
+import { NotificacaoService } from "app/core/notificacao";
+
+import { catchError, switchMap } from "rxjs";
 
 import { EstadioDetalheService } from "./services/detalhe.service";
 
@@ -8,11 +11,31 @@ import { EstadioDetalheService } from "./services/detalhe.service";
     styleUrls: ['./detalhe.component.scss'],
     providers: [EstadioDetalheService]
 })
-export class EstadioDetalheComponent implements OnInit {
+export class EstadioDetalheComponent implements OnInit, OnDestroy {
 
-    constructor() { }
+    constructor(
+        private _service: EstadioDetalheService,
+        private _notificationService: NotificacaoService
+    ) { }
 
     ngOnInit(): void {
         
+        this._service.estadioId$
+            .pipe(
+                switchMap(estadioId => this._service.buscarEstadio(estadioId)),
+                catchError(err => {
+                    this._notificationService.erro(err.error.message);
+                    throw err;
+                })
+            )
+            .subscribe(estadio => {
+
+                console.log('estadio =>', estadio);
+            });
+    }
+
+    ngOnDestroy(): void {
+        
+        this._service.onDestroy();
     }
 }

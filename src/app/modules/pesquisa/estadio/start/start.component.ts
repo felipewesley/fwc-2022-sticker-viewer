@@ -1,5 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { FormControl } from "@angular/forms";
+import { ActivatedRoute, Router } from "@angular/router";
 
 import { NotificacaoService } from "app/core/notificacao";
 
@@ -16,7 +17,9 @@ export class EstadioStartComponent implements OnInit {
 
     constructor(
         private _service: EstadioService,
-        private _notificationService: NotificacaoService
+        private _notificationService: NotificacaoService,
+        private _router: Router,
+        private _activatedRoute: ActivatedRoute
     ) { }
 
     ngOnInit(): void {
@@ -32,5 +35,9 @@ export class EstadioStartComponent implements OnInit {
             this._notificationService.erro(`Um código válido de estádio deve ser informado`);
             return;
         }
+
+        this._notificationService.mensagem(`Carregando dados do estádio...`);
+
+        this._router.navigate([valor], { relativeTo: this._activatedRoute });
     }
 }

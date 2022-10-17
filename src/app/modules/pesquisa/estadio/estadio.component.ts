@@ -10,6 +10,8 @@ import { EstadioService } from "./services/estadio.service";
 })
 export class EstadioComponent implements OnInit, OnDestroy {
 
+    public estadioAtivo$ = this._service.estadioAtivo$;
+
     constructor(
         private _service: EstadioService
     ) { }

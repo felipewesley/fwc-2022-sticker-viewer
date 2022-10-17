@@ -2,7 +2,7 @@ import { ChangeDetectorRef, Component, OnDestroy, OnInit, ViewChild } from "@ang
 import { ActivatedRoute, Router } from "@angular/router";
 import { MatDrawer } from "@angular/material/sidenav";
 
-import { Observable, Subject, takeUntil } from "rxjs";
+import { Observable, of, Subject, takeUntil } from "rxjs";
 
 import { NotificacaoService } from "app/core/notificacao";
 
@@ -19,8 +19,8 @@ import { PesquisaFormService } from "./services/pesquisa.form.service";
 })
 export class PesquisaComponent implements OnInit, OnDestroy {
 
-    public principalLoading$: Observable<boolean>;
-    public detalheLoading$: Observable<boolean>;
+    public principalLoading$: Observable<boolean> = of(true);
+    public detalheLoading$: Observable<boolean> = of(true);
 
     public tipoPesquisaAtivo: TipoPesquisa;
 
@@ -59,6 +59,8 @@ export class PesquisaComponent implements OnInit, OnDestroy {
 
                 this._changeDetectorRef.detectChanges();
             });
+
+        this._changeDetectorRef.detectChanges();
     }
 
     ngOnDestroy(): void {

@@ -2,12 +2,12 @@
 
     <header class="actions">
 
-        <button mat-flat-button class="voltar" [routerLink]="'..'">
+        <button mat-flat-button class="voltar" [routerLink]="['/', 'pesquisa', 'estadio']" *ngIf="estadioAtivo$ | async">
             <mat-icon>arrow_back</mat-icon>
             <span>Voltar</span>
         </button>
 
-        <button mat-icon-button [matTooltip]="'Fechar pesquisa de estádio'" [routerLink]="'..'">
+        <button mat-icon-button class="fechar" [matTooltip]="'Fechar pesquisa de estádio'" [routerLink]="'..'">
             <mat-icon>close</mat-icon>
         </button>
 
