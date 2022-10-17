@@ -1,4 +1,5 @@
 import { Component, OnDestroy, OnInit } from "@angular/core";
+import { ActivatedRoute, Router } from "@angular/router";
 import { NotificacaoService } from "app/core/notificacao";
 
 import { catchError, switchMap } from "rxjs";
@@ -15,7 +16,9 @@ export class EstadioDetalheComponent implements OnInit, OnDestroy {
 
     constructor(
         private _service: EstadioDetalheService,
-        private _notificationService: NotificacaoService
+        private _notificationService: NotificacaoService,
+        private _router: Router,
+        private _activatedRoute: ActivatedRoute
     ) { }
 
     ngOnInit(): void {
@@ -25,6 +28,7 @@ export class EstadioDetalheComponent implements OnInit, OnDestroy {
                 switchMap(estadioId => this._service.buscarEstadio(estadioId)),
                 catchError(err => {
                     this._notificationService.erro(err.error.message);
+                    this._router.navigate(['..'], { relativeTo: this._activatedRoute });
                     throw err;
                 })
             )

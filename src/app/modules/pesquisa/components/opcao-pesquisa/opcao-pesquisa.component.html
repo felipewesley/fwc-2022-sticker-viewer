@@ -1,5 +1,14 @@
-<div class="option" [ngClass]="{'selected': active}" matRipple (click)="onClicked.emit()">
+<div
+    matRipple
+    class="option"
+    (click)="click()"
+    [ngClass]="{
+        'selected': active,
+        'pointer': !disabled
+    }">
     
+    <div class="disabled-overlay" *ngIf="disabled"></div>
+
     <mat-icon
         *ngIf="active"
         class="selected-icon"

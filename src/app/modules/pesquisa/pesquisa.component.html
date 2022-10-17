@@ -49,6 +49,7 @@
                     <!-- Players -->
                     <app-opcao-pesquisa
                         class="item"
+                        [disabled]="true"
                         [active]="tipoPesquisaAtivo == 'jogador'"
                         [title]="'Jogadores'"
                         [icon]="'person'"
@@ -57,6 +58,7 @@
                     <!-- Stadiums -->
                     <app-opcao-pesquisa
                         class="item"
+                        [disabled]="false"
                         [active]="tipoPesquisaAtivo == 'estadio'"
                         [title]="'Estádios'"
                         [icon]="'stadium'"
@@ -65,6 +67,7 @@
                     <!-- Countries -->
                     <app-opcao-pesquisa
                         class="item"
+                        [disabled]="true"
                         [active]="tipoPesquisaAtivo == 'pais'"
                         [title]="'Países'"
                         [icon]="'flag'"
