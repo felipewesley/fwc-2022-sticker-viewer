@@ -6,22 +6,19 @@
         class="drawer-sidebar"
         [mode]="'side'"
         [opened]="false"
-        [position]="'end'">
+        [position]="'end'"
+        [disableClose]="true">
 
-        <loading *ngIf="true"></loading>
+        <loading *ngIf="detalheLoading$ | async"></loading>
 
-        <p>Auto-resizing sidenav</p>
-        <!-- <router-outlet></router-outlet> -->
-        <button mat-raised-button (click)="drawer.close()">
-            close
-        </button>
+        <router-outlet></router-outlet>
         
     </mat-drawer>
 
     <!-- Content -->
     <mat-drawer-content class="drawer-content">
         
-        <loading *ngIf="loading"></loading>
+        <loading *ngIf="principalLoading$ | async"></loading>
 
         <!-- Header -->
         <header class="p-24">
@@ -52,7 +49,7 @@
                     <!-- Players -->
                     <app-opcao-pesquisa
                         class="item"
-                        [active]="false"
+                        [active]="tipoPesquisaAtivo == 'jogador'"
                         [title]="'Jogadores'"
                         [icon]="'person'"
                         (onClicked)="pesquisar('jogador')"></app-opcao-pesquisa>
@@ -60,7 +57,7 @@
                     <!-- Stadiums -->
                     <app-opcao-pesquisa
                         class="item"
-                        [active]="false"
+                        [active]="tipoPesquisaAtivo == 'estadio'"
                         [title]="'Estádios'"
                         [icon]="'stadium'"
                         (onClicked)="pesquisar('estadio')"></app-opcao-pesquisa>
@@ -68,7 +65,7 @@
                     <!-- Countries -->
                     <app-opcao-pesquisa
                         class="item"
-                        [active]="false"
+                        [active]="tipoPesquisaAtivo == 'pais'"
                         [title]="'Países'"
                         [icon]="'flag'"
                         (onClicked)="pesquisar('pais')"></app-opcao-pesquisa>

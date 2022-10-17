@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnDestroy, OnInit } from "@angular/core";
 
 import { EstadioService } from "./services/estadio.service";
 
@@ -8,11 +8,17 @@ import { EstadioService } from "./services/estadio.service";
     styleUrls: ['./estadio.component.scss'],
     providers: [EstadioService]
 })
-export class EstadioComponent implements OnInit {
+export class EstadioComponent implements OnInit, OnDestroy {
 
-    constructor() { }
+    constructor(
+        private _service: EstadioService
+    ) { }
 
     ngOnInit(): void {
-        
+        this._service.init();
+    }
+
+    ngOnDestroy(): void {
+        this._service.destroy();
     }
 }
