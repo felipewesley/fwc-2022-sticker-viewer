@@ -1,1 +1,39 @@
-<router-outlet></router-outlet>
+<div class="container">
+
+    <header class="actions">
+
+        <button mat-flat-button class="voltar" [routerLink]="'..'">
+            <mat-icon>arrow_back</mat-icon>
+            <span>Voltar</span>
+        </button>
+
+        <button mat-icon-button [matTooltip]="'Fechar pesquisa de estádio'" [routerLink]="'..'">
+            <mat-icon>close</mat-icon>
+        </button>
+
+    </header>
+
+    <mat-divider></mat-divider>
+
+    <header class="title">
+            
+        <custom-icon
+            [icon]="'stadium'"
+            [color]="'primary'"></custom-icon>
+
+        <div class="content">
+            <h2>Estádio</h2>
+            <span>
+                Pesquise estádios através do código da figurinha
+            </span>
+        </div>
+
+    </header>
+
+    <section>
+
+        <router-outlet></router-outlet>
+
+    </section>
+    
+</div>

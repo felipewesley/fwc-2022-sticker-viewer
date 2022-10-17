@@ -1,0 +1,41 @@
+.container {
+
+    header.actions {
+
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+
+        padding: 12px 24px;
+
+        .voltar span {
+            margin-left: 16px;
+        }
+    }
+
+    header.title {
+
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+
+        padding: 24px;
+
+        .content {
+            
+            h2 { margin: 0; font-size: 1.35rem; }
+            span { color: rgb(100, 100, 100); }
+
+            margin-left: 16px;
+
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+    }
+
+    section {
+        padding: 24px;
+    }
+}
