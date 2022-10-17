@@ -1,3 +1,28 @@
-<button mat-raised-button [routerLink]="'..'">
-    Voltar
-</button>
+<div class="container">
+
+    <section>
+
+        <mat-form-field [appearance]="'fill'">
+
+            <mat-label>Código</mat-label>
+
+            <input
+                matInput
+                type="text"
+                autocomplete="off"
+                placeholder="Ex.: FWC8"
+                [formControl]="pesquisa">
+
+            <mat-hint>
+                Código da figurinha do estádio
+            </mat-hint>
+
+        </mat-form-field>
+
+        <button mat-raised-button [color]="'primary'" type="button" (click)="pesquisar()">
+            Pesquisar
+        </button>
+
+    </section>
+
+</div>
