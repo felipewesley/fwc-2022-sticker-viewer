@@ -1,11 +1,11 @@
 <header>
-    <h2>Nome do estádio</h2>
+    <h2>{{ estadio?.name }}</h2>
     <small>
         Localizado no Catar, palco da Copa do Mundo FIFA 2022
     </small>
 </header>
 
-<div class="alert">
+<div class="alert" *ngIf="estadio?.openingMatch">
         <custom-icon
             [appearence]="'default'"
             [icon]="'join_left'"
@@ -15,7 +15,7 @@
         </span>
 </div>
 
-<div class="alert">
+<div class="alert" *ngIf="estadio?.finalMatch">
     <custom-icon
         [appearence]="'default'"
         [icon]="'join_right'"
@@ -35,7 +35,7 @@
         <div>
             <small>Código da figurinha</small>
             <p>
-                FWC8
+                {{ estadio?.id }}
             </p>
         </div>
     </div>
@@ -48,7 +48,10 @@
         <div>
             <small>Capacidade</small>
             <p>
-                40000 torcedores
+                {{ estadio?.capacity | number : '1.0-0' }} {{ estadio?.capacity | i18nPlural: {
+                    '=1': 'torcedor',
+                    'other': 'torcedores'
+                } }}
             </p>
         </div>
     </div>
@@ -62,7 +65,10 @@
                 [color]="'primary'"></custom-icon>
             <div>
                 <small>Jogo de abertura?</small>
-                <p>
+                <p *ngIf="estadio?.openingMatch">
+                    Sim
+                </p>
+                <p *ngIf="!estadio?.openingMatch">
                     Não
                 </p>
             </div>
@@ -75,7 +81,10 @@
                 [color]="'primary'"></custom-icon>
             <div>
                 <small>Final da copa?</small>
-                <p>
+                <p *ngIf="estadio?.finalMatch">
+                    Sim
+                </p>
+                <p *ngIf="!estadio?.finalMatch">
                     Não
                 </p>
             </div>

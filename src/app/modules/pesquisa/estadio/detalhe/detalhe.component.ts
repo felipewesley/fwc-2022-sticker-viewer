@@ -4,6 +4,8 @@ import { NotificacaoService } from "app/core/notificacao";
 
 import { catchError, switchMap } from "rxjs";
 
+import { EstadioModel } from "app/dominio/models/estadio.model";
+
 import { EstadioDetalheService } from "./services/detalhe.service";
 
 @Component({
@@ -13,6 +15,8 @@ import { EstadioDetalheService } from "./services/detalhe.service";
     providers: [EstadioDetalheService]
 })
 export class EstadioDetalheComponent implements OnInit, OnDestroy {
+
+    public estadio: EstadioModel;
 
     constructor(
         private _service: EstadioDetalheService,
@@ -34,7 +38,7 @@ export class EstadioDetalheComponent implements OnInit, OnDestroy {
             )
             .subscribe(estadio => {
 
-                console.log('estadio =>', estadio);
+                this.estadio = estadio;
             });
     }
 
