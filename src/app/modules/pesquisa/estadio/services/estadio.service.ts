@@ -1,4 +1,5 @@
 import { Injectable } from "@angular/core";
+import { EstadioModel } from "app/dominio/models/estadio.model";
 
 import { BehaviorSubject, Observable, tap } from "rxjs";
 
@@ -29,7 +30,7 @@ export class EstadioService {
         this._estadioAtivo.next(false);
     }
 
-    public buscarEstadio(estadioId: string): Observable<any> {
+    public buscarEstadio(estadioId: string): Observable<EstadioModel> {
 
         return this._pesquisaService.buscarEstadio(estadioId)
             .pipe(

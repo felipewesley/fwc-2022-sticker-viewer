@@ -1,4 +1,5 @@
 import { Injectable } from "@angular/core";
+import { EstadioModel } from "app/dominio/models/estadio.model";
 
 import { Observable } from "rxjs";
 
@@ -17,7 +18,7 @@ export class EstadioDetalheService {
         return this._detalheResolver.estadioId$;
     }
 
-    public buscarEstadio(estadioId: string): Observable<any> {
+    public buscarEstadio(estadioId: string): Observable<EstadioModel> {
 
         return this._estadioService.buscarEstadio(estadioId);
     }
