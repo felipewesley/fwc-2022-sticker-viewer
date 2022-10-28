@@ -16,7 +16,8 @@ A API em questão pode ser encontrada no [repositório sticker-management](https
 
 ## :pushpin: Tecnologias
 
-![angular-logo](src/assets/technologies/logo-angular-io.png)
+![angular-logo](src/assets/angular.png)
+![nodejs-logo](src/assets/nodejs.png)
 
 - [x] Angular na versão 14, que inclui as seguintes tecnologias:
     - [x] TypeScript
