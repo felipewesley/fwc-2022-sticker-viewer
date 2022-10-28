@@ -76,7 +76,7 @@
                 }
               ],
               "outputHashing": "all",
-              "baseHref": ""
+              "baseHref": "https://felipewesley.github.io/fwc-2022-sticker-viewer/"
             },
             "development": {
               "buildOptimizer": false,
