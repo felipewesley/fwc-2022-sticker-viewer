@@ -1,14 +1,17 @@
-mkdir ../temp
+TEMP_DIR=../tmp
 
-mv ../assets ../temp
-mv ../*.js ../temp
-mv ../*.txt ../temp
-mv ../*.html ../temp
-mv ../*.css ../temp
+mkdir $TEMP_DIR
 
-CONF_FILE=../temp/*.conf.js
+mv ../assets $TEMP_DIR
+mv ../*.js $TEMP_DIR
+mv ../*.txt $TEMP_DIR
+mv ../*.html $TEMP_DIR
+mv ../*.css $TEMP_DIR
+
+CONF_FILE=$TEMP_DIR/*.conf.js
 if test -f "$CONF_FILE"; then
-    mv ../temp/*.conf.js ../
+    echo yes
+    mv $TEMP_DIR/*.conf.js ../
 fi
 
 # git add .
