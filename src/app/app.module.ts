@@ -12,7 +12,7 @@ import { LayoutComponent } from './layout/layout.component';
 
 @NgModule({
   imports: [
-    RouterModule.forRoot([...appRouting]),
+    RouterModule.forRoot([...appRouting], { useHash: true }),
 
     BrowserModule,
     BrowserAnimationsModule,
