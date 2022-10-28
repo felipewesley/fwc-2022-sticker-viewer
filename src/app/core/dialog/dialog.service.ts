@@ -1,5 +1,6 @@
+import { ComponentType } from "@angular/cdk/portal";
 import { Injectable } from "@angular/core";
-import { MatDialog, MatDialogConfig } from "@angular/material/dialog";
+import { MatDialog, MatDialogConfig, MatDialogRef } from "@angular/material/dialog";
 
 import { Observable, map } from "rxjs";
 
@@ -42,6 +43,16 @@ export class DialogService {
             .pipe(
                 map(res => <boolean>!!res)
             );
+    }
+
+    public open<C = unknown>(component: ComponentType<C>, data?: any, options?: MatDialogConfig): MatDialogRef<C> {
+
+        const dialogOptions = options ?? {};
+
+        return this._matDialog.open(component, {
+            ...dialogOptions,
+            data: data
+        });
     }
 
 }
