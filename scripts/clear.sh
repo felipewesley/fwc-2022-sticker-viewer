@@ -18,6 +18,7 @@ then
     mv ../*.txt $TEMP_DIR
     mv ../*.html $TEMP_DIR
     mv ../*.css $TEMP_DIR
+    mv ../*.png $TEMP_DIR
 
     # Save config files
     echo "Restaurando arquivos de configuração (.js)..."
