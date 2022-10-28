@@ -27,5 +27,5 @@ A API em questão pode ser encontrada no [repositório sticker-management](https
     - [x] TypeScript
     - [x] Framework Express
 
-![angular-logo](src/assets/angular.png)
-![nodejs-logo](src/assets/nodejs.png)
+![angular-logo](technologies/angular.png)
+![nodejs-logo](technologies/nodejs.png)
