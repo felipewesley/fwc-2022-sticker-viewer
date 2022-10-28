@@ -1,0 +1,84 @@
+header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+}
+
+main {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: stretch;
+    gap: 8px;
+    width: 100%;
+    padding: 4px;
+    margin: 0;
+
+    img.profile {
+        display: block;
+        width: 115px;
+        border-radius: 999px;
+        overflow: hidden;
+        margin: auto;
+    }
+
+    div.text {
+        display: flex;
+        gap: 2px;
+        align-items: center;
+        margin: auto;
+        // font-weight: 500;
+        // font-size: 1.25rem;
+
+        .owner { color: var(--primary); }
+    }
+
+    div.actions {
+
+        display: flex;
+        flex-direction: row;
+        justify-content: stretch;
+        justify-items: stretch;
+        align-items: center;
+        gap: 16px;
+        width: 100%;
+        margin: 16px auto;
+
+        @media screen and (max-width: 500px) {
+            
+            & {
+                flex-direction: column;
+            }
+
+        }
+
+        button {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            width: 100%;
+
+            p { margin: 0; }
+        }
+
+        .github-icon {
+            content: url(/assets/icons/github-icon.png);
+        }
+        // .github-icon::before {
+        //     content: url(/assets/icons/github-icon.png);
+        // }
+
+        .linkedin-icon {
+            content: url(/assets/icons/linkedin-icon.png);
+        }
+        // .linkedin-icon::before {
+        //     content: url(/assets/icons/linkedin-icon.png);
+        // }
+    }
+
+}

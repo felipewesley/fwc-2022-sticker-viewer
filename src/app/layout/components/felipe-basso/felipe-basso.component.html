@@ -1,1 +1,39 @@
-Hello
+<header mat-dialog-title>
+
+    <h2>
+        Desenvolvedor
+    </h2>
+
+    <button mat-icon-button mat-dialog-close>
+        <mat-icon>close</mat-icon>
+    </button>
+
+</header>
+
+<main mat-dialog-content>
+
+    <figure>
+        <img class="profile" src="assets/profile.jpg" alt="Felipe Basso">
+    </figure>
+
+    <div class="text">
+        <span>Desenvolvido com</span>
+        <mat-icon [color]="'primary'">favorite</mat-icon>
+        <span>por <span class="owner">Felipe Basso</span>.</span>
+    </div>
+
+    <div class="actions">
+
+        <button mat-raised-button class="linkedin" (click)="openLinkedin()">
+            <span class="linkedin-icon"></span>
+            <p>Me conheça!</p>
+        </button>
+
+        <button mat-raised-button class="github" (click)="openGithub()">
+            <span class="github-icon"></span>
+            <p>Sou programador</p>
+        </button>
+
+    </div>
+
+</main>

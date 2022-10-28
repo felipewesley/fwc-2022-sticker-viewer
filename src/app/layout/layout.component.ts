@@ -21,6 +21,9 @@ export class LayoutComponent {
 
     public owner(): void {
 
-        this._dialog.open(FelipeBasso);
+        this._dialog.open(FelipeBasso, null, {
+            width: '500px',
+            disableClose: true
+        });
     }
 }
