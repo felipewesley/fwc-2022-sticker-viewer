@@ -13,6 +13,10 @@
         left: 0;
         display: flex;
         width: 100%;
+
+        .ml-auto {
+            margin-left: auto;
+        }
     }
 
     .content {
