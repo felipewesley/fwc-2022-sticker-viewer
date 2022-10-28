@@ -4,8 +4,6 @@ import { ActivatedRoute, Router } from "@angular/router";
 
 import { NotificacaoService } from "app/core/notificacao";
 
-import { EstadioService } from "../services/estadio.service";
-
 @Component({
     selector: 'app-estadio-start',
     templateUrl: './start.component.html',
@@ -15,15 +13,34 @@ export class EstadioStartComponent implements OnInit {
 
     public pesquisa = new FormControl('');
 
+    public value = '';
+
+    public preSelecaoOpcoes = [
+        'FWC8',
+        'FWC9',
+        'FWC10',
+        'FWC11',
+        'FWC12',
+        'FWC13',
+        'FWC14',
+        'FWC15',
+        'FWC16',
+        'FWC17',
+    ];
+
     constructor(
-        private _service: EstadioService,
         private _notificationService: NotificacaoService,
         private _router: Router,
         private _activatedRoute: ActivatedRoute
     ) { }
 
     ngOnInit(): void {
-        
+       
+        this.pesquisa.valueChanges
+            .subscribe(value => {
+
+                this.value = value?.toUpperCase();
+            });
     }
 
     public pesquisar(): void {
@@ -39,5 +56,10 @@ export class EstadioStartComponent implements OnInit {
         this._notificationService.mensagem(`Carregando dados do estádio...`);
 
         this._router.navigate([valor], { relativeTo: this._activatedRoute });
+    }
+
+    public preSelecionar(valor: string): void {
+
+        this.pesquisa.patchValue(valor?.toUpperCase());
     }
 }

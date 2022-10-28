@@ -19,6 +19,30 @@
 
         </mat-form-field>
 
+        <mat-accordion class="">
+
+            <mat-expansion-panel>
+                <mat-expansion-panel-header>
+                    <mat-panel-title>
+                        <small>Sugestões</small>
+                    </mat-panel-title>
+                </mat-expansion-panel-header>
+          
+                <div>
+
+                    <mat-chip-list aria-label="Fish selection">
+                        <mat-chip
+                            *ngFor="let opcao of preSelecaoOpcoes"
+                            [color]="'primary'"
+                            [selected]="value == opcao"
+                            (click)="preSelecionar(opcao)">{{opcao}}</mat-chip>
+                    </mat-chip-list>
+
+                </div>
+          
+            </mat-expansion-panel>
+        </mat-accordion>
+
         <button mat-raised-button [color]="'primary'" type="button" (click)="pesquisar()">
             Pesquisar
         </button>
