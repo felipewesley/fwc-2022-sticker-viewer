@@ -3,6 +3,9 @@ if [ ! -d "$TEMP_DIR" ]; then
     mkdir $TEMP_DIR
 fi
 
+# Clear temp directory
+rm -rf $TEMP_DIR/*
+
 mv ../assets $TEMP_DIR
 mv ../*.js $TEMP_DIR
 mv ../*.txt $TEMP_DIR
@@ -11,7 +14,7 @@ mv ../*.css $TEMP_DIR
 
 CONF_FILE=$TEMP_DIR/*.conf.js
 if test -f "$CONF_FILE"; then
-    echo yes
+    echo "yes"
     mv $TEMP_DIR/*.conf.js ../
 fi
 
