@@ -4,23 +4,23 @@ import { LayoutComponent } from "./layout/layout.component";
 
 export const appRouting: Routes = [
 
-    {
-        path: '',
-        pathMatch: 'full',
-        redirectTo: 'home'
-    },
+    // {
+    //     path: '',
+    //     pathMatch: 'full',
+    //     redirectTo: 'home'
+    // },
 
     {
         path: '',
         component: LayoutComponent,
         children: [
 
+            // {
+            //     path: 'home',
+            //     loadChildren: () => import('./modules/home/home.module').then(m => m.HomeModule)
+            // },
             {
-                path: 'home',
-                loadChildren: () => import('./modules/home/home.module').then(m => m.HomeModule)
-            },
-            {
-                path: 'pesquisa',
+                path: '',
                 loadChildren: () => import('./modules/pesquisa/pesquisa.module').then(m => m.PesquisaModule)
             }
 
