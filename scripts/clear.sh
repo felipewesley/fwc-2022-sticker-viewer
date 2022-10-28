@@ -1,10 +1,10 @@
 mkdir ../temp
 
 mv ../assets ../temp
-rm ../*.js ../temp
-rm ../*.txt ../temp
-rm ../*.html ../temp
-rm ../*.css ../temp
+mv ../*.js ../temp
+mv ../*.txt ../temp
+mv ../*.html ../temp
+mv ../*.css ../temp
 
 CONF_FILE=../temp/*.conf.js
 if test -f "$CONF_FILE"; then
