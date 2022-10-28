@@ -12,12 +12,11 @@ Utilizado como hobby e, também, ferramenta para consumo de uma API REST também
 ## :pushpin: Sobre
 
 Este mini-app consiste em uma apresentação visual dos dados retornados por uma API. <br>
-A API em questão pode ser encontrada no [repositório sticker-management](https://github.com/felipewesley/sticker-management), a qual foi desenvolvida durante o processo de estudos da plataforma NodeJS, sobre o framework Express.
+A API em questão pode ser encontrada no [repositório sticker-management](https://github.com/felipewesley/sticker-management), a qual foi desenvolvida durante o processo de estudos da plataforma NodeJS.
+
+<div id='technologies'/> &nbsp;
 
 ## :pushpin: Tecnologias
-
-![angular-logo](src/assets/angular.png)
-![nodejs-logo](src/assets/nodejs.png)
 
 - [x] Angular na versão 14, que inclui as seguintes tecnologias:
     - [x] TypeScript
@@ -27,3 +26,6 @@ A API em questão pode ser encontrada no [repositório sticker-management](https
 - [x] NodeJs - Plataforma sobra a qual foi desenvolvida a API consumida por esta aplicação, a qual utiliza:
     - [x] TypeScript
     - [x] Framework Express
+
+![angular-logo](src/assets/angular.png)
+![nodejs-logo](src/assets/nodejs.png)
