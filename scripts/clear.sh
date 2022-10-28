@@ -1,6 +1,7 @@
 TEMP_DIR=../tmp
-
-mkdir $TEMP_DIR
+if [ ! -d "$TEMP_DIR" ]; then
+    mkdir $TEMP_DIR
+fi
 
 mv ../assets $TEMP_DIR
 mv ../*.js $TEMP_DIR
