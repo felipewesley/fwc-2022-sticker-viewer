@@ -1,11 +1,19 @@
-# Fwc2022StickerViewer
+# fwc-2022-sticker-viewer
 Projeto desenvolvimento durante o **processo de estudos da plataforma NodeJS**.
 Utilizado como hobby e, também, ferramenta para consumo de uma API REST também desenvolvida durante os estudos.
 
 ## Conteúdo
 
+* [App :computer:](#app)
 * [Sobre](#about)
 * [Tecnologias](#technologies)
+
+<div id='app'/> &nbsp;
+
+## :pushpin: App :computer:
+
+- [Acesse o app](https://felipewesley.github.io/fwc-2022-sticker-viewer/#/) para explorar os recursos.
+- Explore o [projeto da API](https://github.com/felipewesley/sticker-management) que fornece dados para esta aplicação.
 
 <div id='about'/> &nbsp;
 
