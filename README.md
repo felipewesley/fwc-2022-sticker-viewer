@@ -12,7 +12,8 @@ Utilizado como hobby e, também, ferramenta para consumo de uma API REST também
 
 ## :pushpin: App :computer:
 
-- [Acesse o app](https://felipewesley.github.io/fwc-2022-sticker-viewer/#/) para explorar os recursos ([demo](https://felipewesley.github.io/fwc-2022-sticker-viewer/#/));
+- [Acesse o app](https://felipewesley.github.io/fwc-2022-sticker-viewer/#/) para explorar os recursos:
+  - Disponível em [https://felipewesley.github.io/fwc-2022-sticker-viewer](https://felipewesley.github.io/fwc-2022-sticker-viewer/#/);
 - Explore o [projeto da API](https://github.com/felipewesley/sticker-management) que fornece dados para esta aplicação.
 
 <div id='about'/> &nbsp;
