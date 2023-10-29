@@ -7,6 +7,7 @@ import { BehaviorSubject, delay, finalize, Observable, take } from "rxjs";
 
 import { TipoPesquisa } from "app/dominio/types/search.type";
 import { EstadioModel } from "app/dominio/models/estadio.model";
+import { JogadorModel } from "app/dominio/models/jogador.model";
 
 @Injectable()
 export class PesquisaService {
@@ -37,6 +38,10 @@ export class PesquisaService {
         this._tipoPesquisaSelecionado.next(tipoPesquisa);
     }
 
+    /**
+     * BUSCA ESTADIO
+     */
+
     public buscarEstadio(estadioId: string): Observable<EstadioModel> {
 
         this._detalheLoading.next(true);
@@ -52,6 +57,31 @@ export class PesquisaService {
         const url = environment.api.baseUrl + environment.api.estadio;
 
         return this._http.get<EstadioModel>(url + '/' + estadioId)
+            .pipe(
+                take(1),
+                delay(2000)
+            );
+    }
+
+    /**
+     * BUSCA JOGADOR
+     */
+
+    public buscarJogador(jogadorId: string): Observable<JogadorModel> {
+
+        this._detalheLoading.next(true);
+
+        return this._buscarJogador(jogadorId)
+            .pipe(
+                finalize(() => this._detalheLoading.next(false))
+            );
+    }
+
+    private _buscarJogador(jogadorId: string): Observable<JogadorModel> {
+
+        const url = environment.api.baseUrl + environment.api.jogador;
+
+        return this._http.get<JogadorModel>(url + '/' + jogadorId)
             .pipe(
                 take(1),
                 delay(2000)
